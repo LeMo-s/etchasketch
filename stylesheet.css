@@ -20,11 +20,9 @@ div {
 
 .pixel {
     background-color: blueviolet;
+    opacity: 0;
 }
 
-.pixel:hover {
-    background-color: aqua;
-}
 
 button {
     margin: 20px 0;

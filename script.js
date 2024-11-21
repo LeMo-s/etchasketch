@@ -16,8 +16,23 @@ function generateGrid() {
     for (let i=0; i < numSquaresPerSide * numSquaresPerSide; i++) {
         const pixel = document.createElement('div')
         pixel.setAttribute('style', `width: ${sideLength}px; height: ${sideLength}px`)
+        pixel.addEventListener('mouseenter', () => (pixel.style.opacity = changeOpacity(window.getComputedStyle(pixel).getPropertyValue('opaacity'))))
         pixel.classList.add("pixel")
         container.appendChild(pixel)
+    }
+}
+
+function changeOpacity(pixelOpacity) {
+    let opacity = pixelOpacity
+    if (opacity == 1) {
+        console.log(opacity)
+        console.log('Full')
+        return 1
+    } else {
+        console.log(opacity)
+        console.log(typeof opacity)
+        console.log('+10')
+        return (opacity += 0.1)
     }
 }
 
